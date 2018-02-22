@@ -6,3 +6,6 @@ npm install
 npm run webpack-serverside
 npm run webpack-dev
 php bin/console server:run
+
+#readmore
+https://github.com/Limenius/symfony-react-sandbox/tree/symfony4
