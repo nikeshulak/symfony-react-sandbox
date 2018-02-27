@@ -1,0 +1,37 @@
+.pagination span.current {
+    padding: 0px 10px 1px;
+    color: #ffffff;
+}
+.pagination span
+ a {
+    padding: 1px 10px 3px;
+    background: #969696;
+    color: white;
+    font-family: $body-font;
+}
+.pagination span.current,
+.pagination span a:hover {
+    background: #82bfa2;
+ }
+
+.pagination {
+    float: right !important;
+    display: inline-block !important;
+    /*position: absolute;*/
+    right: 15px;
+    bottom: 0;
+    margin-bottom: 30px;
+}
+
+.pagination span {
+    float: left;
+}
+
+.pagination span.active a,
+ .pagination span:hover a {
+    /*background: #32a3dc;*/
+}
+
+.has-pagination {
+    padding-bottom: 40px;
+}

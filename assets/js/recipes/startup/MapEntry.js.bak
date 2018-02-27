@@ -1,11 +1,12 @@
 import React from "react";
-import Recipes from "../containers/Recipes";
-import Recipe from "../containers/Recipe";
+// import Recipes from "../containers/Recipes";
+// import Recipe from "../containers/Recipe";
+import Maps from "../containers/Maps";
 import { renderToString } from "react-dom/server";
 import { BrowserRouter, StaticRouter, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import App from "./RecipesApp";
-// import App from "./MapApp";
+// import App from "./RecipesApp";
+import App from "./MapApp";
 
 export default (initialProps, context) => {
   let Router;
@@ -17,8 +18,7 @@ export default (initialProps, context) => {
   // title (the title)
   // other data you may need to render the page
   if (context.serverSide) {
-    const renderedHtml = 
-    {
+    const renderedHtml = {
       componentHtml: renderToString(
         <StaticRouter
           basename={context.base}
@@ -33,9 +33,9 @@ export default (initialProps, context) => {
     return { renderedHtml };
   } else {
     return (
-        <BrowserRouter basename={context.base}>
-          <App initialProps={initialProps} appContext={context} />
-        </BrowserRouter>
+      <BrowserRouter basename={context.base}>
+        <App initialProps={initialProps} appContext={context} />
+      </BrowserRouter>
     );
   }
 };

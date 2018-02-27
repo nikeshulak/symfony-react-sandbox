@@ -3,6 +3,8 @@ import RecipeWidget from "../../common/components/Recipe";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
+import HeaderTemplate from './layout/HeaderTemplate';
+
 // Simple example of a React "smart" component
 export default class Recipe extends React.Component {
   constructor(props, context) {
@@ -43,16 +45,25 @@ export default class Recipe extends React.Component {
   }
   render() {
     if (this.state.loading) {
-      return <div>Loading...</div>;
+      return (
+        <div>
+          <HeaderTemplate />
+          Loading...
+        </div>
+      );
     } else {
       return (
         <div>
+          <HeaderTemplate />
+
           <Helmet>
             <title>{this.state.recipe.name}</title>
           </Helmet>
+
           <ol className="breadcrumb">
             <li>
-              <Link to="/">Recipes</Link>
+              <Link to="/recipe/">Recipes</Link>
+              {/*<Link to="/">Recipes</Link>*/}
             </li>
             <li className="active">{this.state.recipe.name}</li>
           </ol>

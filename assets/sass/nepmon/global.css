@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	background-color: #dcdcdc;
+	
+  font-family: 'Nirmala UI';
+} 
+
+.row-no-padding > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+a, a:hover, a:focus {
+	text-decoration: none !important;
+}
+
+a:hover {
+
+}
+
+/* buttons */
+.btn-link.focus, 
+.btn-link:focus, 
+.btn-link:hover {
+    color: #5d8672 !important;
+}

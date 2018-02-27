@@ -1,6 +1,9 @@
 import React from 'react'
 import RecipeSearchList from '../../common/components/RecipeSearchList'
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+
+import HeaderTemplate from './layout/HeaderTemplate';
 
 // Simple example of a React "smart" component
 export default class Recipes extends React.Component {
@@ -37,15 +40,19 @@ export default class Recipes extends React.Component {
         if (this.state.loading) {
             return (
                 <div>
-                Loading...
+                    <HeaderTemplate />
+                    Loading...
                 </div>
             )
         } else {
             return (
                 <div>
+                    <HeaderTemplate />
+
                     <Helmet>
                       <title>Recipes List</title>
                     </Helmet>
+
                     <ol className="breadcrumb">
                         <li className="active">Recipes</li>
                     </ol>

@@ -13,8 +13,9 @@ use App\Entity\Recipe;
 class RecipeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/recipe/", name="homepage")
      */
+    // @Route("/")
     public function homeAction(SerializerInterface $serializer)
     {
         $recipes = $this->getDoctrine()

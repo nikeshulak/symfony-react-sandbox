@@ -1,0 +1,62 @@
+@import url('global.css');
+@import url('header.css');
+@import url('footer.css');
+
+@import url('reports.css');
+
+/*elements*/
+@import url('elements/accordion.css');
+@import url('elements/pagination.css');
+
+.jumbotron {
+	background: #ECE7D0;
+}
+
+/* Show page for report */
+.report-links {
+    text-decoration: none !important;
+    color: #26292D;
+}
+
+.report-links:hover {
+    color: #26292D;
+    font-weight: bold;
+}
+
+.report-links:hover p {
+    color: #26292D;
+    font-weight: normal;
+}
+
+.card {
+    border-color: rgba(155, 155, 158,0.8);
+    padding: 10px;
+    margin: 10px;
+}
+
+hr{
+    border-color: rgba(44, 45, 49, 0.6);
+}
+
+@media (max-width: 991px) {
+    .related-div {
+        margin-top: 20px !important;
+    }
+}
+/* Report show page end*/
+
+/* .navbar-collapse.collapse {
+  display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
+}
+
+.navbar-right {
+  float: right!important;
+} */

@@ -1,0 +1,32 @@
+
+.card {
+    border-radius: 0;
+    padding: 0 !important;
+}
+
+.card-header {
+    border-bottom: 0;
+    background: #e6e6e6;
+    padding: 0;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-header .btn {
+    padding: 5px 10px;
+}
+
+.card-header .btn-link {
+    color: #333;
+}
+
+.card li.causeClicked {
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.card ul {
+    margin-bottom: 0;
+}

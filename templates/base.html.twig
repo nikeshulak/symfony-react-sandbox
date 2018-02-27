@@ -11,6 +11,8 @@
 
     {% block title %}<title>Symfony React</title>{% endblock title %}
     {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
         <link href="{{asset('build/css/main.css')}}" rel="stylesheet">
     {% endblock %}
 
@@ -23,11 +25,12 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    {#<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Symfony React Example</a>
+          <a class="navbar-brand" href="#">Nepal Monitor</a>
         </div>
+        
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="{{path('homepage')}}">React example</a></li>
@@ -38,6 +41,7 @@
             <li><a href="https://github.com/Limenius/symfony-react-sandbox">See this project on GitHub</a></li>
           </ul>
         </div>
+
       </div>
     </nav>
 
@@ -47,7 +51,88 @@
             <div id="react-container">{% spaceless %}{% block body %}{% endblock %}{% endspaceless%}</div>
         </div>
 
-    </div><!-- /.container -->
+    </div>
+    <!-- /.container -->
+    #}
+    <div id="react-container">{% spaceless %}{% block body %}{% endblock %}{% endspaceless%}</div>
+
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--<script src="/js/KAZI.app.js"></script>
+    <script src="/js/KAZI.app.equalheight.js"></script>-->
+
+
+    <!-- map -->
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9NyvFIa3inSZ1dw3rNrGm1o-xKmxhKdc">
+    </script>
+    <!-- &callback=initMap -->
+    <!--<script src="/js/google-map.js"></script>-->
+    <script>
+    var map, labels, indices, markers, markerCluster;
+    var infoWindow;
+    function initMap() {
+        infoWindow = new google.maps.InfoWindow();
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: {lat: 27.7089427, lng: 85.2560925}
+        });
+        map.setOptions({ minZoom: 6, maxZoom: 25 });
+
+        // Create an array of alphabetical characters used to label the markers.
+        // labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+
+        /*markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });*/
+
+        // Add a marker clusterer to manage the markers.
+        /*markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});*/
+    }
+    var locations = [
+        {lat: -31.563910, lng: 147.154312},
+        {lat: -33.718234, lng: 150.363181},
+        {lat: -33.727111, lng: 150.371124},
+        {lat: -33.848588, lng: 151.209834},
+        {lat: -33.851702, lng: 151.216968},
+        {lat: -34.671264, lng: 150.863657},
+        {lat: -35.304724, lng: 148.662905},
+        {lat: -36.817685, lng: 175.699196},
+        {lat: -36.828611, lng: 175.790222},
+        {lat: -37.750000, lng: 145.116667},
+        {lat: -37.759859, lng: 145.128708},
+        {lat: -37.765015, lng: 145.133858},
+        {lat: -37.770104, lng: 145.143299},
+        {lat: -37.773700, lng: 145.145187},
+        {lat: -37.774785, lng: 145.137978},
+        {lat: -37.819616, lng: 144.968119},
+        {lat: -38.330766, lng: 144.695692},
+        {lat: -39.927193, lng: 175.053218},
+        {lat: -41.330162, lng: 174.865694},
+        {lat: -42.734358, lng: 147.439506},
+        {lat: -42.734358, lng: 147.501315},
+        {lat: -42.735258, lng: 147.438000},
+        {lat: -43.999792, lng: 170.463352}
+    ]
+
+    // map-height
+    /*$(document).ready(function() {
+      // height for homepage map
+      $('.homepage #map').height($(window).height() - $('header').height() - $('nav').height());
+    });*/
+    </script>
 
 
     {% block javascripts %}
