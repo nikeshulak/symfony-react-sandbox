@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Recipe;
 
+use App\Entity\Report;
+
 class ApiController extends Controller
 {
     /**
@@ -40,4 +42,31 @@ class ApiController extends Controller
         return new JsonResponse($serializer->normalize($recipe));
     }
 
+
+    /**
+     * @Route("/api/report", name="api_report")
+     *
+     * Needed for client-side navigation after initial page load
+     */
+    public function apiReportAction(Request $request)
+    {
+        $serializer = $this->get('serializer');
+
+        // $em = $this->getDoctrine()->getManager();
+        // $report = $em->getRepository(Report::class)->findBy(array(), array('date'=> 'DESC'));
+
+        $report = $this->getDoctrine()
+            ->getRepository(Report::class)
+            // ->findAll()
+            ->findBy(array(), array('date'=> 'DESC'))
+            ;
+
+        // var_dump($report); exit();
+        // A circular reference has been detected when serializing the object of class "App\Entity\Report" (configured limit: 1)
+            
+        return new JsonResponse(
+            $serializer->normalize($report)
+            // $report
+        );
+    }
 }

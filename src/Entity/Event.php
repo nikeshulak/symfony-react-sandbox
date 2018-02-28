@@ -39,7 +39,7 @@ class Event
     private $status=1;
 
     /**
-     * @ORM\OneToMany(targetEntity="Report", mappedBy="primaryEventFrom")
+     * @ORM\OneToMany(targetEntity="Report", mappedBy="primaryEventForm")
      */
     private $primaryReports;
 
